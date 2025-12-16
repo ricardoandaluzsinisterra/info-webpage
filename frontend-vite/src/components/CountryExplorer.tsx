@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import FlowingMenu from "./FlowingMenu";
+import SpotlightCards from "./SpotlightCards";
 import localCountries from "../../../collections/countries.json";
 
 interface Achievement {
@@ -81,6 +82,10 @@ export default function CountryExplorer() {
           }}
         />
       </div>
+
+      {/* Spotlight cards */}
+      <SpotlightCards />
+
       {selectedCountry && (
         <div className="country-detail">
           <h3>{selectedCountry.name}</h3>

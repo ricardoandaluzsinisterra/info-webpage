@@ -1,0 +1,100 @@
+.spotlight-section {
+  padding: 2rem 1rem;
+  background: transparent;
+  color: var(--color-blue-dark);
+}
+
+.spotlight-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.spotlight-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-blue-dark);
+}
+.spotlight-header h2 {
+  font-size: 1.9rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: var(--color-blue-dark);
+}
+.spotlight-header p {
+  margin: 0 auto;
+  color: rgba(17,24,39,0.75);
+  max-width: 64ch;
+}
+
+/* grid */
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* card */
+.spotlight-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.spotlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(2,6,23,0.08);
+}
+
+.spotlight-card-hero {
+  padding: 1.25rem;
+  text-align: center;
+}
+.spotlight-icon {
+  font-size: 2.8rem;
+  display: inline-block;
+}
+
+/* body */
+.spotlight-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1 1 auto;
+}
+.spotlight-headline {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-blue-dark);
+  font-weight: 600;
+}
+.spotlight-copy {
+  margin: 0;
+  color: rgba(17,24,39,0.7);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  flex: 1 1 auto;
+}
+
+/* CTA */
+.spotlight-cta {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg,var(--color-gold),var(--color-brown));
+  color: var(--color-blue-dark);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* responsive */
+@media (max-width: 960px) {
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+}

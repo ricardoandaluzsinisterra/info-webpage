@@ -7,9 +7,9 @@ export default function App() {
   return (
     <div className="App">
       <main className="App-main">
-        <ContactForm />
         <CountryExplorer />
       </main>
+      <ContactForm />
     </div>
   )
 }

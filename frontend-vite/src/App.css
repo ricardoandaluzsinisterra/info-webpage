@@ -32,18 +32,15 @@ body {
   color: var(--color-blue-dark);
 }
 
-/* menu container: keep only the menu area dark, slightly inset from full width */
+/* flowing menu container: rounded and centered without changing layout */
 .menu-container {
-  background: var(--color-blue-dark);
-  color: var(--color-beige);
-  padding: 0.4rem 0;
-  border-radius: 8px;
-  width: calc(100vw - 1rem);
   max-width: 1400px;
+  margin: 1rem 1rem;
+  width: calc(100% - 3rem);
+  border-radius: 12px;
+  overflow: hidden; /* ensure menu respects radius */
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 2rem;
+  background: transparent;
 }
 
 /* Links styling */
@@ -113,7 +110,7 @@ input:focus, textarea:focus, select:focus {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 0.6px;
-  margin: 3rem 0 2rem 0;
+  margin: 1rem 0 2rem 0;
   color: #000000;
   font-size: 2.6rem;
   line-height: 1.05;
