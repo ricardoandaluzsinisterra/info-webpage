@@ -18,6 +18,60 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Color palette applied for historical theme */
+:root {
+  --color-blue-dark: #172639;
+  --color-green-dark: #3F5756;
+  --color-brown: #926D33;
+  --color-gold: #CB9323;
+  --color-beige: #D5C2A2;
+}
+
+body {
+  background: var(--color-blue-dark);
+  color: var(--color-beige);
+}
+
+/* Links styling */
+a {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-brown);
+}
+
+/* Button styling */
+button, .btn {
+  background: var(--color-gold);
+  color: var(--color-blue-dark);
+  border: none;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: var(--color-brown);
+  color: var(--color-beige);
+}
+
+/* Input styling */
+input, textarea, select {
+  background: var(--color-beige);
+  color: var(--color-blue-dark);
+  border: 1px solid var(--color-gold);
+  border-radius: 4px;
+  padding: 0.4em 0.8em;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--color-gold);
+}
+
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

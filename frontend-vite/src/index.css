@@ -1,3 +1,15 @@
+:root {
+  --color-blue-dark: #172639;
+  --color-green-dark: #3F5756;
+  --color-brown: #926D33;
+  --color-gold: #CB9323;
+  --color-beige: #D5C2A2;
+}
+
+body {
+  background: var(--color-blue-dark);
+  color: var(--color-beige);
+}
 
 @import "tw-animate-css";
 
