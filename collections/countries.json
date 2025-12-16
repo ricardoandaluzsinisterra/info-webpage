@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Panama - Democratic Movements & Freedom",
+    "region": "Central America",
+    "era": "Colonial to Modern",
+    "coordinates": {
+      "latitude": 8.9824,
+      "longitude": -79.5199
+    },
+    "imageUrl": "https://res.cloudinary.com/demo/image/fetch/https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Panama_Canal_by_night.jpg/1280px-Panama_Canal_by_night.jpg",
+    "description": "Panama's path to democratic independence and sovereignty. Despite colonial slavery and exploitation, Panamanian leaders and intellectuals developed groundbreaking arguments for self-determination, racial equality, and democratic governance. Panama became a model for anti-imperial resistance and multiracial democracy in Central America.",
+    "population": 4000000,
+    "leaders": ["Manuel Encarnación", "Rubén Darío (influence)", "Democratic Movement Leaders"],
+    "culturalHeritage": "Afro-Caribbean and indigenous fusion with democratic values",
+    "economicSystem": "Post-colonial transition to democratic market economy",
+    "politicalStructure": "Democratic republic with constitutional protections for minorities"
+  },
+  {
+    "name": "Colombia - Republican Ideals & Anti-Slavery Leadership",
+    "region": "South America",
+    "era": "1810-Present",
+    "coordinates": {
+      "latitude": 4.5709,
+      "longitude": -74.2973
+    },
+    "imageUrl": "https://res.cloudinary.com/demo/image/fetch/https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Monserrate_3.jpg/1280px-Monserrate_3.jpg",
+    "description": "Colombia pioneered democratic constitutionalism in South America with radical anti-slavery measures and intellectual movements against racial discrimination. Colombian thinkers and leaders developed some of Latin America's first comprehensive arguments for racial equality and democratic participation regardless of color or origin.",
+    "population": 52000000,
+    "leaders": ["Simón Bolívar", "José Félix de Restrepo", "Francisco de Paula Santander", "Gregor MacGregor"],
+    "culturalHeritage": "Afro-Colombian and indigenous-led democratic movements",
+    "economicSystem": "Post-colonial republican economy with anti-slavery policies",
+    "politicalStructure": "Federal and unitary democratic constitutions protecting minority rights"
+  },
+  {
+    "name": "Venezuela - Pan-American Democracy & Anti-Racism",
+    "region": "South America",
+    "era": "1811-Present",
+    "coordinates": {
+      "latitude": 6.4238,
+      "longitude": -66.5897
+    },
+    "imageUrl": "https://res.cloudinary.com/demo/image/fetch/https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Angel_Falls.jpg/1280px-Angel_Falls.jpg",
+    "description": "Venezuela emerged as a leader in Pan-American democratic ideals and anti-racist philosophy. Venezuelan intellectuals and leaders advocated for universal manhood suffrage, abolition of slavery, and racial integration—concepts revolutionary for their time. The nation became a haven for enslaved peoples seeking freedom.",
+    "population": 28000000,
+    "leaders": ["Simón Bolívar", "Juan Pablo Peña", "José Martí (influence)", "Anti-slavery activists"],
+    "culturalHeritage": "Afro-Venezuelan leadership in independence and democratic movements",
+    "economicSystem": "Post-colonial economy founded on anti-slavery principles",
+    "politicalStructure": "Democratic republic with explicit constitutional anti-discrimination clauses"
+  },
+  {
+    "name": "Mexico - Indigenous Rights & Democratic Constitutionalism",
+    "region": "North America",
+    "era": "1810-Present",
+    "coordinates": {
+      "latitude": 19.4326,
+      "longitude": -99.1332
+    },
+    "imageUrl": "https://res.cloudinary.com/demo/image/fetch/https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Tenochtitlan_lake_valley_mexico.jpg/1280px-Tenochtitlan_lake_valley_mexico.jpg",
+    "description": "Mexico developed groundbreaking indigenous rights frameworks and democratic constitutions that explicitly rejected colonial racial hierarchies. Mexican intellectuals created powerful anti-racist and anti-colonial philosophies, elevating indigenous contributions to civilization and demanding equal citizenship rights regardless of racial or ethnic background.",
+    "population": 128000000,
+    "leaders": ["Miguel Hidalgo", "Benito Juárez", "José María Morelos", "Leona Vicario"],
+    "culturalHeritage": "Indigenous-led liberation and democratic movements",
+    "economicSystem": "Post-colonial economy with indigenous economic participation",
+    "politicalStructure": "Federal democratic republic with indigenous autonomy provisions"
+  }
+]
