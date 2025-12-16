@@ -11,13 +11,14 @@ interface FormData {
 }
 
 export default function ContactForm() {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<FormData>()
+  const { register, handleSubmit, reset, getValues, trigger, formState: { errors, isSubmitting } } = useForm<FormData>()
   const [submitted, setSubmitted] = React.useState(false)
   const [error, setError] = React.useState<string | null>(null)
 
   const onSubmit = async (data: FormData) => {
     setError(null)
     try {
+      console.log('[contact] payload', JSON.stringify(data))
       await axios.post('http://localhost:5000/api/contact', data)
       setSubmitted(true)
       reset()
@@ -42,7 +43,7 @@ export default function ContactForm() {
           <div className="footer-sub">Questions, corrections, or sources — reach out.</div>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="footer-form" aria-live="polite">
+        <form onSubmit={(e) => { console.log('[contact] nativeSubmit'); handleSubmit(onSubmit)(e); }} onSubmitCapture={() => { console.log('[contact] submitCaptured'); console.log('[contact] currentValues', getValues()); console.log('[contact] errors', errors); }} className="footer-form" aria-live="polite">
           {submitted && <div className="footer-success">✓ Message sent — thanks.</div>}
           {error && <div className="footer-error">✗ {error}</div>}
 
@@ -80,7 +81,7 @@ export default function ContactForm() {
           />
 
           <div className="footer-actions">
-            <button type="submit" disabled={isSubmitting}>{isSubmitting ? 'Sending...' : 'Send'}</button>
+            <button type="submit" disabled={isSubmitting} onClick={() => console.log('[contact] button clicked')}>{isSubmitting ? 'Sending...' : 'Send'}</button>
           </div>
         </form>
       </div>
