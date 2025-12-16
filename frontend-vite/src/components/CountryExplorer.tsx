@@ -71,14 +71,16 @@ export default function CountryExplorer() {
 
   return (
     <div className="country-explorer">
-      <h2>Explore Latin American Achievements</h2>
-      <FlowingMenu
-        items={menuItems}
-        onItemClick={(id) => {
-          const country = countries.find((c) => c._id === id) || null;
-          setSelectedCountry(country);
-        }}
-      />
+      <h2 className="page-title">LATAM DEMOCRAT</h2>
+      <div className="menu-container">
+        <FlowingMenu
+          items={menuItems}
+          onItemClick={(id) => {
+            const country = countries.find((c) => c._id === id) || null;
+            setSelectedCountry(country);
+          }}
+        />
+      </div>
       {selectedCountry && (
         <div className="country-detail">
           <h3>{selectedCountry.name}</h3>

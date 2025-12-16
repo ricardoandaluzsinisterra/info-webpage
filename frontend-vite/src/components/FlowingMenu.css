@@ -1,6 +1,6 @@
 .menu-wrap {
   width: 100%;
-  height: 60vh;
+  height: 32vh; /* reduced to remove excess bottom space */
   overflow: hidden;
 }
 

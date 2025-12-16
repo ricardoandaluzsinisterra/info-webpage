@@ -28,8 +28,22 @@
 }
 
 body {
+  background: #fff4e6; /* warmer ivory */
+  color: var(--color-blue-dark);
+}
+
+/* menu container: keep only the menu area dark, slightly inset from full width */
+.menu-container {
   background: var(--color-blue-dark);
   color: var(--color-beige);
+  padding: 0.4rem 0;
+  border-radius: 8px;
+  width: calc(100vw - 1rem);
+  max-width: 1400px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2rem;
 }
 
 /* Links styling */
@@ -93,4 +107,14 @@ input:focus, textarea:focus, select:focus {
 
 .read-the-docs {
   color: #888;
+}
+
+.page-title {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  margin: 3rem 0 2rem 0;
+  color: #000000;
+  font-size: 2.6rem;
+  line-height: 1.05;
 }
