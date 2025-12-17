@@ -38,7 +38,46 @@ router.get('/', async (req, res) => {
   }
 });
 
- // Get single country
+ // Get single country by slug
+router.get('/slug/:slug', async (req, res) => {
+  try {
+    const slug = req.params.slug;
+    const slugify = (s) =>
+      s
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
+    // Try to find by slugified name first
+    const all = await Country.find();
+    const country = all.find((c) => slugify(c.name) === slug);
+
+    if (!country) return res.status(404).json({ error: 'Country not found' });
+
+    // Attach achievements (same strategy as other endpoints)
+    const rawAchievements = await Achievement.collection.find({
+      $or: [
+        { country: country._id },
+        { country: country.name }
+      ]
+    }).toArray();
+    const achievements = rawAchievements.map(a => {
+      const ach = Object.assign({}, a);
+      if (ach._id && ach._id.toString) ach._id = ach._id.toString();
+      if (ach.country && ach.country.toString) {
+        ach.country = country.name;
+      }
+      return ach;
+    });
+    const countryObj = country.toObject();
+    countryObj.achievements = achievements;
+    res.json(countryObj);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get single country
 router.get('/:id', async (req, res) => {
   try {
     const country = await Country.findById(req.params.id);
