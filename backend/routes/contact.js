@@ -1,12 +1,25 @@
 const express = require('express');
 const router = express.Router();
 const Contact = require('../models/Contact');
-const sgMail = require('@sendgrid/mail');
+const nodemailer = require('nodemailer');
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+function createTransporter() {
+  return nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
+    },
+  });
+}
 
 // Submit contact form
 router.post('/', async (req, res) => {
+  console.log('[contact] incoming', { time: new Date().toISOString() });
+  console.log('[contact] headers', req.headers);
+  console.log('[contact] body', req.body);
   try {
     const { name, email, message, countryInterest } = req.body;
 
@@ -24,10 +37,11 @@ router.post('/', async (req, res) => {
     });
     await contact.save();
 
-    // Send confirmation email via SendGrid
-    const msg = {
+    // Send confirmation email via Google OAuth2 (Gmail API)
+    const transporter = await createTransporter();
+    await transporter.sendMail({
       to: email,
-      from: process.env.SENDGRID_FROM_EMAIL,
+      from: process.env.GMAIL_FROM_EMAIL || process.env.GMAIL_USER,
       subject: 'Welcome to Democratical - We received your message!',
       html: `
         <h2>Hello ${name}!</h2>
@@ -35,9 +49,7 @@ router.post('/', async (req, res) => {
         <p>We'll get back to you shortly.</p>
         <p>Best regards,<br>Democratical Team</p>
       `
-    };
-
-    await sgMail.send(msg);
+    });
     contact.emailSent = true;
     await contact.save();
 

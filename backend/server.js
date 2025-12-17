@@ -12,7 +12,16 @@ const app = express();
 
 // Middleware
 app.use(cors());
-app.use(express.json());
+app.use(express.json({
+  verify: (req, res, buf) => {
+    try {
+      req.rawBody = buf && buf.toString();
+      console.log('[raw-body]', req.rawBody);
+    } catch (e) {
+      console.log('[raw-body] error', e);
+    }
+  }
+}));
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI, {

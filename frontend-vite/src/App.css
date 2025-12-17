@@ -1,0 +1,134 @@
+.App {
+  max-width: none;
+  margin: 0 auto;
+  padding: 2rem 2rem 0; /* keep top/side padding, remove bottom space so footer sits flush */
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.App-main {
+  flex: 1 0 auto; /* main content grows to fill available space, pushing footer to bottom */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Color palette applied for historical theme */
+:root {
+  --color-blue-dark: #172639;
+  --color-green-dark: #3F5756;
+  --color-brown: #926D33;
+  --color-gold: #CB9323;
+  --color-beige: #D5C2A2;
+}
+
+body {
+  background: #fff4e6; /* warmer ivory */
+  color: var(--color-blue-dark);
+}
+
+/* flowing menu container: rounded and centered without changing layout */
+.menu-container {
+  max-width: 1400px;
+  margin: 1rem auto;
+  width: calc(100% - 3rem);
+  border-radius: 12px;
+  overflow: hidden; /* ensure menu respects radius */
+  position: relative;
+  background: transparent;
+}
+
+/* Links styling */
+a {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-brown);
+}
+
+/* Button styling */
+button, .btn {
+  background: var(--color-gold);
+  color: var(--color-blue-dark);
+  border: none;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: var(--color-brown);
+  color: var(--color-beige);
+}
+
+/* Input styling */
+input, textarea, select {
+  background: var(--color-beige);
+  color: var(--color-blue-dark);
+  border: 1px solid var(--color-gold);
+  border-radius: 4px;
+  padding: 0.4em 0.8em;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--color-gold);
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.page-title {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  margin: 1rem 0 2rem 0;
+  color: #000000;
+  font-size: 2.6rem;
+  line-height: 1.05;
+}
+
+/* make Country Explorer content auto-size to available space */
+.country-explorer {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0 2rem;
+  flex: 1 0 auto; /* allow explorer to grow and push footer down */
+}
